@@ -11,7 +11,7 @@ package bd.ac.seu;
  */
 public class GitDemo {
     public static int add(int a, int b) {
-        return 0;
+        return a + b;
     }
     
     /**
