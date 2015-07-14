@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+">
+    <bean id = "rakib_savings" class = "bd.ac.seu.accounts.SavingsAccount">
+        <constructor-arg type="int" value="101" />
+        <constructor-arg type="java.lang.String" value="Mohammad Rakibul Hasan" />
+        <constructor-arg type="double" value="1000.00" />
+        <property name="address" ref="rakib_address" />
+    </bean>
+    <bean id = "ashiq_current" class = "bd.ac.seu.accounts.CurrentAccount">
+        <constructor-arg type="int" value="102" />
+        <constructor-arg type="java.lang.String" value="Md. Ashiqur Rahman" />
+        <constructor-arg type="double" value="1000.00" />
+        <property name="address" ref="seu_address" />
+    </bean>
+    <bean id = "monirul_savings" class = "bd.ac.seu.accounts.SavingsAccount">
+        <constructor-arg value="103" />
+        <constructor-arg value="Monirul Hasan" />
+        <constructor-arg value="1000.00" />
+        <property name="address" ref="seu_address" />
+        <property name="phones">
+            <list>
+                <ref bean="seu_phone1" />
+                <ref bean="seu_phone2" />
+            </list>
+        </property>
+    </bean>
+    <bean id="rakib_address" class="bd.ac.seu.accounts.Address">
+        <constructor-arg value="420 Uttar Khan" />
+        <constructor-arg value="Uttara" />
+        <constructor-arg value="Dhaka" />
+    </bean>
+    <bean id="seu_address" class="bd.ac.seu.accounts.Address">
+        <constructor-arg value="24 Kemal Ataturk Avenue" />
+        <constructor-arg value="Banani" />
+        <constructor-arg value="Dhaka" />
+    </bean>
+    <bean id="seu_phone1" class="bd.ac.seu.accounts.Phone">
+        <constructor-arg value="88" />
+        <constructor-arg value="02" />
+        <constructor-arg value="9882340" />
+    </bean>
+    <bean id="seu_phone2" class="bd.ac.seu.accounts.Phone">
+        <constructor-arg value="88" />
+        <constructor-arg value="02" />
+        <constructor-arg value="9561340" />
+    </bean>
+</beans>
+
