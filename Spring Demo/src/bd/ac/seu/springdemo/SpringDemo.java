@@ -7,8 +7,11 @@ package bd.ac.seu.springdemo;
 
 import bd.ac.seu.accounts.BankAccount;
 import bd.ac.seu.accounts.CurrentAccount;
+import bd.ac.seu.accounts.NegativeNumberException;
 import bd.ac.seu.accounts.Phone;
 import bd.ac.seu.accounts.SavingsAccount;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -24,9 +27,13 @@ public class SpringDemo {
         BankAccount b = (CurrentAccount) context.getBean("ashiq_current");
         BankAccount c = (SavingsAccount) context.getBean("monirul_savings");
 
-        a.deposit(100);
-        b.deposit(100);
-        c.deposit(100);
+        try {
+            a.deposit(100);
+            b.deposit(100);
+            c.deposit(100);
+        } catch (NegativeNumberException ex) {
+            Logger.getLogger(SpringDemo.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.out.println(a);
         System.out.println(b);
         System.out.println(c);

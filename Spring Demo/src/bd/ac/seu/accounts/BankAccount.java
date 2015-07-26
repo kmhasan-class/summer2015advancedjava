@@ -46,9 +46,10 @@ public abstract class BankAccount {
             balance = balance - amount;
     }
 
-    public void deposit(double amount) {
+    public void deposit(double amount) throws NegativeNumberException {
         if (amount > 0)
             balance = balance + amount;
+        else throw new NegativeNumberException();
     }
     
     /**

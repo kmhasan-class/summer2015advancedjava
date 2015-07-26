@@ -13,7 +13,7 @@ public class SavingsAccount extends BankAccount {
     }
 
     @Override
-    public void deposit(double amount) {
+    public void deposit(double amount) throws NegativeNumberException {
         super.deposit(amount * 1.10);
     }
     
