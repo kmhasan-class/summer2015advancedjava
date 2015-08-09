@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+http://172.17.0.119:8080/JSP_Servlet_Demo/
+-->
+
+<html>
+    <head>
+        <title>Course Entry</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Enter course information: <br />
+            <form action="CourseController" method="POST">
+                Course code: <input type="text" name="code" value="CSE1033" /><br />
+                Course title: <input type="text" name="title"/><br />
+                Credit hours: <input type="text" name="credits"/><br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </body>
+</html>
