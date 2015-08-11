@@ -5,7 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:useBean id="course" scope="request" class="bd.ac.seu.uss.Course"/>
+<jsp:useBean id="course" scope="request" class="bd.ac.seu.uss.Course" />
+<jsp:useBean id="courses" scope="request" class="java.util.ArrayList" />
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,5 +21,13 @@
             Course title: <jsp:getProperty name="course" property="title" /><br />
             Credit hours: <jsp:getProperty name="course" property="credits" /><br />
         </p>
+        <table border="1">
+            <c:forEach items="${courses}" var="d">
+                <tr>
+                    <td>${d.code}</td> <td>${d.title}</td>
+                </tr>
+            </c:forEach>
+        </table>
+
     </body>
 </html>

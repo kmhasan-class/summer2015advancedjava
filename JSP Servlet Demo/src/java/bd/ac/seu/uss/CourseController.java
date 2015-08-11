@@ -7,6 +7,7 @@ package bd.ac.seu.uss;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,8 +37,15 @@ public class CourseController extends HttpServlet {
         double credits = Double.parseDouble(request.getParameter("credits"));
         Course course = new Course(code, title, credits);
         
+        ArrayList<Course> courses = new ArrayList<>();
+        courses.add(new Course("CSE1011", "C", 3));
+        courses.add(new Course("CSE1012", "C Lab", 1));
+        courses.add(new Course("MATH1024", "Coordinate Geometry", 3));
+        
         System.out.println(course);
         request.setAttribute("course", course);
+        request.setAttribute("courses", courses);
+        
         getServletContext().getRequestDispatcher("/CourseView.jsp").forward(request, response);
     }
 
