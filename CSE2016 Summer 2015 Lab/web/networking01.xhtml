@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Networking 01</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <h2>Networking 01</h2>
+            <div>Write a Java Client/Server calculator application that does as follows:</div>
+            <h3>Client side</h3>
+            <ul>
+                <li>Connects to the server that is running on your computer at 2215</li>
+                <li>Once connection is established, it sends calculation requests in the form:
+                    <ul>
+                        <li>ADD x y</li>
+                        <li>SUB x y</li>
+                        <li>MUL x y</li>
+                        <li>DIV x y</li>
+                        <li>where x and y are 32 bit integers</li>
+                    </ul>
+                </li>
+                <li>Prints out the response it got from the server</li>
+            </ul>
+            <h3>Server side</h3>
+            <ul>
+                <li>Creates a socket and listens for client on port 2215</li>
+                <li>When the client sends a calculation request it sends back the result, for example:
+                    <ul>
+                        <li>Client sends: ADD 4 -5; Server responds: -1</li>
+                        <li>Client sends: DIV 10 3; Server responds: 3</li>
+                    </ul>
+                </li>
+            </ul>
+
+        </ui:composition>
+    </h:body>
+</html>

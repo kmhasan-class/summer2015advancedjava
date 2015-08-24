@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Title</title>
+    </h:head>
+    <h:body>
+        <h:form id='form'>
+            <p:growl id="growl" life="2000" />
+            <h:panelGrid columns ='2' cellspacing='5'>
+            <h:outputText value="User name" /><h:inputText id='userId' value='#{administratorCreator.userId}' />
+            <h:outputText value="Password" /><h:inputSecret id='password' value='#{administratorCreator.password}' />
+            <p:commandButton id="withIcon" actionListener="#{administratorCreator.create}" update="growl" icon="ui-icon-plus" />
+            </h:panelGrid>
+        </h:form>
+
+        <p:accordionPanel>
+            <p:tab title="Networking 01">
+                <ui:insert name="content">
+                    <ui:include src="networking01.xhtml" />
+                </ui:insert>
+            </p:tab>
+            <p:tab title="Networking 02">
+                <ui:insert name="content">
+                    <ui:include src="networking02.xhtml" />
+                </ui:insert>
+            </p:tab>
+            <p:tab title="Multithreading 01">
+                <ui:insert name="content">
+                    <ui:include src="multithreading01.xhtml" />
+                </ui:insert>
+            </p:tab>
+            <p:tab title="Drawing 01">
+                <ui:insert name="content">
+                    <ui:include src="drawing01.xhtml" />
+                </ui:insert>
+            </p:tab>
+            <p:tab title="Animation 01">
+                <ui:insert name="content">
+                    <ui:include src="animation01.xhtml" />
+                </ui:insert>
+            </p:tab>
+            <p:tab title="Animation 02">
+                <ui:insert name="content">
+                    <ui:include src="animation02.xhtml" />
+                </ui:insert>
+            </p:tab>
+            <p:tab title="Database 02">
+                <ui:insert name="content">
+                    <ui:include src="database02.xhtml" />
+                </ui:insert>
+            </p:tab>
+            <p:tab title="Giveaway">
+                <ui:insert name="content">
+                    <ui:include src="giveaway.xhtml" />
+                </ui:insert>
+            </p:tab>
+        </p:accordionPanel>
+
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+    </h:body>
+</html>

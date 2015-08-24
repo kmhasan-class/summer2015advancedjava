@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Networking 02</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <h2>Networking 02</h2>
+            <div>Write a Java Client/Server calculator application that does as follows:</div>
+            <h3>Client side</h3>
+            <ul>
+                <li>Two different clients (say Client A and Client B) connect to the server that is running on your computer at 4200</li>
+                <li>Maintains their own names through a String data member</li>
+                <li>Client A sends a message</li>
+                <li>Client B sends a message</li>
+                <li>Both clients print out their own names followed by the message they got as response from the server</li>
+            </ul>
+            <h3>Server side</h3>
+            <ul>
+                <li>Creates a socket and listens for client on port 4200</li>
+                <li>Accepts message from the first client and responds: "Thank you!"</li>
+                <li>Accepts message from the second client and responds: "The first guy tells me X"
+                    <ul><li>where X is the message it got from the first client</li></ul>
+                </li>
+            </ul>
+        </ui:composition>
+    </h:body>
+</html>
